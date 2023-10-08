@@ -13,9 +13,12 @@ vim.opt.autowrite = true
 vim.opt.cursorline = true
 vim.opt.autoread = true
 vim.opt.number = true
+vim.opt.signcolumn = "yes"
 
 -- use spaces for tabs and whatnot
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
 vim.opt.expandtab = true
+
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
